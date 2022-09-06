@@ -1,13 +1,19 @@
 {
-  "name": "fullstack-chat",
-  "author": "Lester Fernandez",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  }
+    "name": "fullstack-chatapp-w-cardgame",
+    "author": "Chan Jer Yong",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ]
+    },
+    "scripts": {
+        "dev:server": "yarn workspace @card-app/server dev",
+        "dev:client": "yarn workspace @card-app/client start",
+        "build:client": "yarn workspace @card-app/client build",
+        "start": "yarn workspace @card-app/server start"
+    }
 }
