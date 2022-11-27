@@ -27,13 +27,16 @@ const Login = () => {
                     },
                     body: JSON.stringify(vals),
                 }).catch(err => {
+                    console.log("e", err);
                     return;
                 }).then(res => {
                     if (!res || !res.ok || res.status >= 400) {
+                        console.log("f", res);
                         return;
                     }
                     return res.json();
                 }).then(data => {
+                    console.log("d", data);
                     if (!data) return;
                     const { username, loggedIn, status } = data;
                     actions.setUsername(username);
