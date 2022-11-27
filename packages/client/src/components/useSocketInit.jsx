@@ -9,9 +9,9 @@ const useSocketInit = () => {
     const navigate = useNavigate();
     console.log("nav");
     useEffect(() => {
-        console.log("pre");
+        console.log("pre", socket);
         socket.connect();
-        console.log("post");
+        console.log("post", socket);
         socket.on("start_game", (res, pin) => {
             actions.addGameState(res)
             navigate("game/" + pin)
