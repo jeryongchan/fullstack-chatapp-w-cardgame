@@ -22,6 +22,7 @@ const useSocketInit = () => {
             actions.setPlayers(players);
         });
         socket.on("friends", friendList => {
+            console.log("friends2")
             actions.setFriends(friendList);
             store.getState().friends.map(async friend => {
                 const username = friend.username;
@@ -30,15 +31,18 @@ const useSocketInit = () => {
             })
         })
         socket.on("messages", messages => {
+            console.log("msg")
             actions.setMessages(messages)
         })
         socket.on("dm", message => {
             actions.addMessage(message)
         })
         socket.on("connected", (status, username) => {
+            console.log("friends")
             actions.setFriendsConnected({ status, username });
         })
         socket.on("connect_error", () => {
+            console.log("connecterror")
             actions.setLoggedIn(false);
         });
 
