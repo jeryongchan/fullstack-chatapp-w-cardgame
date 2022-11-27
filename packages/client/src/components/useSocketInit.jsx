@@ -41,8 +41,8 @@ const useSocketInit = () => {
             console.log("friends")
             actions.setFriendsConnected({ status, username });
         })
-        socket.on("connect_error", () => {
-            console.log("connecterror")
+        socket.on("connect_error", (err) => {
+            console.log("connecterror", err)
             actions.setLoggedIn(false);
         });
 
