@@ -7,8 +7,11 @@ import { useEffect } from "react";
 
 const useSocketInit = () => {
     const navigate = useNavigate();
+    console.log("nav");
     useEffect(() => {
+        console.log("pre");
         socket.connect();
+        console.log("post");
         socket.on("start_game", (res, pin) => {
             actions.addGameState(res)
             navigate("game/" + pin)
