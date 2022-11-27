@@ -9,9 +9,9 @@ export const useAuth = () => {
 };
 
 const PrivateRoutes = () => {
-    console.log("b")
+    console.log("bs")
     useSocketInit();
-    console.log("c")
+    console.log("cs")
     return useAuth() ? <Outlet /> : <Navigate to="/login" />;
 };
 
