@@ -15,7 +15,9 @@ export const fetchAvatar = async (username) => {
             const objectURL = URL.createObjectURL(data);
             console.log("objectURL", objectURL)
             return objectURL;
+        } else {
+            return "/assets/blankprofilepic.png";
         }
-        return;
+
     });
 }
