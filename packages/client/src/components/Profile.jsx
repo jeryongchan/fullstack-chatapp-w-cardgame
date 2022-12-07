@@ -109,7 +109,7 @@ const Profile = () => {
                     console.log(user.username)
                     formData.append("username", user.username);
                     formData.append("avatar", image);
-                    await fetch("http://localhost:4000/image", {
+                    await fetch(`${process.env.REACT_APP_SERVER_URL}/image`, {
                         method: "POST",
                         body: formData,
                     }).catch(err => {
