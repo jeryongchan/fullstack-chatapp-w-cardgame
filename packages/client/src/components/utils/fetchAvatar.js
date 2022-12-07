@@ -1,4 +1,5 @@
 export const fetchAvatar = async (username) => {
+    console.log("username", username)
     return await fetch(`${process.env.REACT_APP_SERVER_URL}/image/` + username
     ).catch(err => {
         console.log('err', err)
