@@ -20,8 +20,8 @@ export default class MainScene extends Phaser.Scene {
             let playersURL = [];
             for (let i = 0; i < players.length; i++) {
                 const playerURL = await fetchAvatar(players[i]);
-                console.log(playerURL);
-                playersURL.push("playerURL", playerURL);
+                console.log("playerURL", playerURL);
+                playersURL.push(playerURL);
             }
             console.log("playersURL", playersURL)
             this.scene.start("Scene", playersURL);
