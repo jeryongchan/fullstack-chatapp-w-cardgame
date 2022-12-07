@@ -35,6 +35,7 @@ const useSocketInit = () => {
             actions.setMessages(messages)
         })
         socket.on("dm", message => {
+            console.log("dm", message)
             actions.addMessage(message)
         })
         socket.on("connected", (status, username) => {
