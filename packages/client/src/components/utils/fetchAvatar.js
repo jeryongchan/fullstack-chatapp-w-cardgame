@@ -6,9 +6,12 @@ export const fetchAvatar = async (username) => {
         return;
     }).then(res => {
         console.log('res', res)
+        if (res === 'no avatar') {
+            return null;
+        }
         if (!res || !res.ok || res.status >= 400) {
             console.log("no res", res)
-            return "/assets/blankprofilepic.png";
+            return
         }
         return res.blob();
     }).then(data => {
@@ -17,7 +20,10 @@ export const fetchAvatar = async (username) => {
             const objectURL = URL.createObjectURL(data);
             console.log("objectURL", objectURL)
             return objectURL;
-        } 
+        } else {
+            console.log("no avatar sent")
+            return "/assets/blankprofilepic.png";
+        }
         console.log("na")
         return
 
