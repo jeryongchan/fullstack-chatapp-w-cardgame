@@ -6,7 +6,8 @@ export const fetchAvatar = async (username) => {
     }).then(res => {
         console.log('res', res)
         if (!res || !res.ok || res.status >= 400) {
-            return;
+            console.log("no res", res)
+            return "/assets/blankprofilepic.png";
         }
         return res.blob();
     }).then(data => {
@@ -15,9 +16,9 @@ export const fetchAvatar = async (username) => {
             const objectURL = URL.createObjectURL(data);
             console.log("objectURL", objectURL)
             return objectURL;
-        } else {
-            return "/assets/blankprofilepic.png";
-        }
+        } 
+        console.log("na")
+        return
 
     });
 }
