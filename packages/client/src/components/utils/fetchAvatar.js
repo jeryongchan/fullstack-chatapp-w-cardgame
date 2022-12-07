@@ -6,7 +6,9 @@ export const fetchAvatar = async (username) => {
         return;
     }).then(res => {
         console.log('res', res)
-        if (res === 'no avatar') {
+        console.log('resbody', res.body)
+        if (res.body === 'no avatar') {
+            console.log("HIII")
             return null;
         }
         if (!res || !res.ok || res.status >= 400) {
