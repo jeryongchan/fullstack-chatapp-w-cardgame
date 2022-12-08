@@ -14,9 +14,9 @@ const useSocketInit = () => {
         console.log("post", socket);
         socket.on("start_game", (res, pin) => {
             console.log('starttres', res);
-            console.log('pregs',store.getState().game.gameStates;
+            console.log('pregs',store.getState().game.gameStates);
             actions.addGameState(res);
-            console.log('postgs', store.getState().game.gameStates;
+            console.log('postgs', store.getState().game.gameStates);
             navigate("game/" + pin)
         })
 
