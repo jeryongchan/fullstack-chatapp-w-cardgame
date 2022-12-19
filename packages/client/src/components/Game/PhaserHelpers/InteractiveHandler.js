@@ -277,6 +277,7 @@ export default class InteractiveHandler {
                     const target = scene.GameHandler.playerHand.lifted[i];
                     scene.GameHandler.lastPlayed.add(target)
                     scene.GameHandler.playerHand.remove(target)
+                    console.log("selfplaycards, scene.GameHandler.playerHand.lifted", scene.GameHandler.playerHand.lifted)
                     scene.tweens.add({
                         targets: target,
                         ease: 'Expo.easeOut',
@@ -396,6 +397,7 @@ export default class InteractiveHandler {
                         }
                         const gameObjectIndexInLifted = scene.GameHandler.playerHand.lifted.indexOf(gameObject)
                         const gameObjectIndexInLiftedByHandOrder = scene.GameHandler.playerHand.liftedByHandOrder[gameObjectIndexInLifted];
+                        console.log("scene.GameHandler.playerHand.lifted", scene.GameHandler.playerHand.lifted)
                         scene.tweens.add({
                             targets: scene.GameHandler.playerHand.lifted[i],
                             ease: 'Expo.easeOut',
