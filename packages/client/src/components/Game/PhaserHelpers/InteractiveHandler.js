@@ -115,7 +115,6 @@ export default class InteractiveHandler {
                 if (playerOfNextTurn === this.username) {
                     scene.GameHandler.turnCursor.visible = false;
                 }
-                console.log("aaaaa")
                 console.log("store.getState().game.gameStates", store.getState().game.gameStates)
                 console.log(scene.GameHandler.turnMessages)
                 console.log(playerOfNextTurn)
@@ -366,7 +365,9 @@ export default class InteractiveHandler {
                 this.unableToDropError = "Not your turn"
                 scene.dropZone.disableInteractive();
             }
+            console.log("gameobjectpre", gameObject)
             scene.tweens.killTweensOf(gameObject)
+            console.log("gameObjectpost", gameObject)
             const curIndex = this.getCurIndex(gameObject)
             scene.GameHandler.playerHand.dragStartFromLifted = scene.GameHandler.playerHand.lifted.includes(gameObject);
             for (var i = 0; i < scene.GameHandler.playerHand.length; i++) {
