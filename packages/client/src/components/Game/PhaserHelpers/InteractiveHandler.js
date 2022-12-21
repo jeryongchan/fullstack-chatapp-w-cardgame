@@ -277,6 +277,7 @@ export default class InteractiveHandler {
                     scene.GameHandler.lastPlayed.add(target)
                     scene.GameHandler.playerHand.remove(target)
                     console.log("selfplaycards, scene.GameHandler.playerHand.lifted", scene.GameHandler.playerHand.lifted)
+                    scene.tweens.killTweensOf(target)
                     scene.tweens.add({
                         targets: target,
                         ease: 'Expo.easeOut',
@@ -366,7 +367,7 @@ export default class InteractiveHandler {
                 scene.dropZone.disableInteractive();
             }
             console.log("gameobjectpre", gameObject)
-//             scene.tweens.killTweensOf(gameObject)
+            scene.tweens.killTweensOf(gameObject)
             console.log("gameObjectpost", gameObject)
             const curIndex = this.getCurIndex(gameObject)
             scene.GameHandler.playerHand.dragStartFromLifted = scene.GameHandler.playerHand.lifted.includes(gameObject);
